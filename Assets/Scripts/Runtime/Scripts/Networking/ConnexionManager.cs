@@ -15,8 +15,25 @@ namespace Asynkrone.UnityTelegramGame.Networking
 
         public void RetriveURLAndID()
         {
-            Url = URLParameters.Hostname;
-            playerId = URLParameters.GetSearchParameters()["id"];
+            try
+            {
+                Url = URLParameters.location_hostname();
+
+            }
+            catch
+            {
+                Debug.LogError("URL");
+            }
+
+            try
+            {
+                playerId = URLParameters.GetSearchParameters()["id"];
+
+            }
+            catch
+            {
+                Debug.LogError("ID");
+            }
         }
 
         /*void Start()
