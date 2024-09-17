@@ -7,36 +7,14 @@ namespace Asynkrone.UnityTelegramGame.Networking
 {
     public class ConnexionManager : MonoBehaviour
     {
+        [Tooltip("The end point where the score will be read & handled on your app")] [SerializeField] private string serverURI = "https://example.com/highscore/";
+        [Tooltip("Big prime numbers to provide a basic security when sending score to the app")] [SerializeField] private long[] SCORE_TOKEN = { };
         private IObfuscation obfuscation;
 
-        public string Url = "";
-        public string playerId = "";
+        private string playerId = "";
         private bool dontSend = false;
 
-        public void RetriveURLAndID()
-        {
-            try
-            {
-                Url = URLParameters.location_hostname();
-
-            }
-            catch
-            {
-                Debug.LogError("URL");
-            }
-
-            try
-            {
-                playerId = URLParameters.GetSearchParameters()["id"];
-
-            }
-            catch
-            {
-                Debug.LogError("ID");
-            }
-        }
-
-        /*void Start()
+        void Start()
         {
             obfuscation = new BasicObfuscation(SCORE_TOKEN);
 
@@ -47,10 +25,10 @@ namespace Asynkrone.UnityTelegramGame.Networking
         playerId = URLParameters.GetSearchParameters()["id"];
         // Debug.Log("Got playerId: " + playerId);
 #endif
-        }*/
+        }
 
 
-        /*public void SendScore(int score)
+        public void SendScore(int score)
         {
             StartCoroutine(SendScoreCor(score));
         }
@@ -84,6 +62,6 @@ namespace Asynkrone.UnityTelegramGame.Networking
                         break;
                 }
             }
-        }*/
+        }
     }
 }
