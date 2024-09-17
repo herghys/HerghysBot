@@ -57,19 +57,13 @@
       }
 
       function GetURLFromParent(){
-        var returnStr = GetURLFromParent();
-        var bufferSize = lengthBytesUTF8(returnStr) + 1;
-        var buffer = _malloc(bufferSize);
-        stringToUTF8(returnStr, buffer, bufferSize);
-        return buffer;
+        var returnStr = window.location.href;
+        return returnStr;
       }
 
       function GetURLFromTop(){
-        var returnStr = GetURLFromTop();
-        var bufferSize = lengthBytesUTF8(returnStr) + 1;
-        var buffer = _malloc(bufferSize);
-        stringToUTF8(returnStr, buffer, bufferSize);
-        return buffer;
+        var returnStr = top.location.href;
+        return returnStr;
       }
 
       var buildUrl = "Build";
