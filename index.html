@@ -56,6 +56,22 @@
         updateBannerVisibility();
       }
 
+      function GetURLFromParent(){
+        var returnStr = GetURLFromParent();
+        var bufferSize = lengthBytesUTF8(returnStr) + 1;
+        var buffer = _malloc(bufferSize);
+        stringToUTF8(returnStr, buffer, bufferSize);
+        return buffer;
+      }
+
+      function GetURLFromTop(){
+        var returnStr = GetURLFromTop();
+        var bufferSize = lengthBytesUTF8(returnStr) + 1;
+        var buffer = _malloc(bufferSize);
+        stringToUTF8(returnStr, buffer, bufferSize);
+        return buffer;
+      }
+
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/HerghysBotBuild.loader.js";
       var config = {
