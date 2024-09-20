@@ -38,9 +38,9 @@ window.addEventListener("load", function () {
   var buildUrl = "Build";
   var loaderUrl = buildUrl + "/DuckieBubble.loader.js";
   var config = {
-    dataUrl: buildUrl + "/DuckieBubble.data.unityweb",
-    frameworkUrl: buildUrl + "/DuckieBubble.framework.js.unityweb",
-    codeUrl: buildUrl + "/DuckieBubble.wasm.unityweb",
+    dataUrl: buildUrl + "/DuckieBubble.data",
+    frameworkUrl: buildUrl + "/DuckieBubble.framework.js",
+    codeUrl: buildUrl + "/DuckieBubble.wasm",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "Graphie",
     productName: "Duckie Bubble",
