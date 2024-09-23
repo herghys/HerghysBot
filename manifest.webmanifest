@@ -1,11 +1,11 @@
 {
-    "name": "Duckie Bubble",
-    "short_name": "Duckie Bubble",
+    "name": "HerghysBot",
+    "short_name": "HerghysBot",
     "start_url": "index.html",
     "display": "fullscreen",
     "background_color": "#231F20",
     "theme_color": "#000",
-    "description": "",
+    "description": "HerghysBot",
     "icons": [{
       "src": "TemplateData/icons/unity-logo-dark.png",
       "sizes": "144x144",
