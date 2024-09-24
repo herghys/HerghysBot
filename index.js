@@ -1,9 +1,18 @@
+<<<<<<< Updated upstream
 var unityInstanceRef;
 window.addEventListener("load", function () {
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("ServiceWorker.js");
     }
   });
+=======
+window.addEventListener("load", function () {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("ServiceWorker.js");
+  }
+});
+  var unityInstanceRef;
+>>>>>>> Stashed changes
   var unsubscribe;
   var container = document.querySelector("#unity-container");
   var canvas = document.querySelector("#unity-canvas");
@@ -72,7 +81,10 @@ window.addEventListener("load", function () {
       progressBarFull.style.width = 100 * progress + "%";
     }).then((unityInstance) => {
       unityInstanceRef = unityInstance;
+<<<<<<< Updated upstream
       window.unityInstanceRef = unityInstance;
+=======
+>>>>>>> Stashed changes
       loadingBar.style.display = "none";
     }).catch((message) => {
       alert(message);
