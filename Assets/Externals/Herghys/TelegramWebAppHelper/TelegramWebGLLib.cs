@@ -32,6 +32,7 @@ namespace Herghys.Telegram.WebGL
 
     [DllImport("__Internal")] public static extern void location_set_search(string aSearch);
     [DllImport("__Internal")] public static extern void location_set_hash(string aHash);
+    [DllImport("__Internal")] public static extern string request_user_data();
 #endif
 
 #if UNITY_EDITOR

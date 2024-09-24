@@ -80,5 +80,24 @@ var URLParamLib = {
     {
         window.location.hash = Pointer_stringify(str);
     },
+    request_user_data: function()
+    {
+        let data = "";
+        try{
+            console.log("window ==")
+
+            data = window.GetTokenData();
+        }
+        catch{}
+
+        console.log("DATA");
+        console.log(data);
+
+        var bufferSize = lengthBytesUTF8(data) + 1;
+        var buffer = _malloc(bufferSize);
+        stringToUTF8(data, buffer, bufferSize);
+
+        return buffer;
+    }
 };
 mergeInto(LibraryManager.library, URLParamLib);
