@@ -34,13 +34,9 @@
         }
         var jsonString = JSON.stringify(returnData);
 
-        console.log("ADASDASDASDASDASDASD");
         console.log(jsonString);
 
-        var bufferSize = lengthBytesUTF8(jsonString) + 1;
-        var buffer = _malloc(bufferSize);
-        stringToUTF8(str, buffer, bufferSize);
-        window.unityInstanceRef.SendMessage("TelegramController", "SetLoginData", jsonString)
+        return jsonString;
       }
 
       window.GetTokenData = GetTokenData;
