@@ -40,7 +40,7 @@
         var bufferSize = lengthBytesUTF8(jsonString) + 1;
         var buffer = _malloc(bufferSize);
         stringToUTF8(str, buffer, bufferSize);
-        window.unityInstanceRef.SendMessage("TelegramController", "SetLoginData", jsonString)
+        window.unityInstanceRef.SendMessage("TelegramController", "SetLoginData", buffer)
       }
 
       window.GetTokenData = GetTokenData;
