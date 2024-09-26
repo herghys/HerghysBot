@@ -113,10 +113,16 @@
 
       if (telegram == null)
       {
-        return "";
+        return null;
       }
 
-      jsonString = JSON.stringify(telegram.initDataUnsafe?.user);
+      const user = JSON.stringify(telegram.initDataUnsafe?.user);
+      let startParam = window.Telegram.WebApp.initDataUnsafe.start_param;
+
+      var returnData = {
+        "user": user,
+        "referral_code": startParam? startParam : ''
+      }
       return jsonString;
 
       //const user = telegram.initDataUnsafe?.user;
