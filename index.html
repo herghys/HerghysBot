@@ -118,6 +118,8 @@
         "user": user,
         "referral_code": startParam? startParam : ''
       }
+
+      var jsonString = JSON.stringify(returnData);
       return jsonString;
 
       //const user = telegram.initDataUnsafe?.user;
