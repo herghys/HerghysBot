@@ -112,6 +112,10 @@
       const telegram = window.Telegram.WebApp;
       const user = telegram.initDataUnsafe?.user;
 
+      if (user == null){
+        return "unready"
+      }
+
       let startParam = window.Telegram.WebApp.initDataUnsafe.start_param;
 
       console.log('data Params', startParam);
