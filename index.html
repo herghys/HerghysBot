@@ -118,12 +118,12 @@
 
       var returnData = 
       {
-          "id": user?.id,
+          "id": user?.id ? user?.id : "unready",
           "username" : user?.username,
           "first_name": user?.first_name,
           "last_name": user?.last_name,
           "referral_code": startParam ? startParam : '',
-          "language_code": "en",
+          "language_code": user?.language_code,
           "is_premium": user?.is_premium
       }
 
