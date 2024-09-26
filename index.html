@@ -110,16 +110,11 @@
     function GetTelegramData(){
       Telegram.WebApp.ready();
       const telegram = window.Telegram.WebApp;
-
-      if (telegram == null)
-      {
-        return null;
-      }
-
       const user = JSON.stringify(telegram.initDataUnsafe?.user);
       let startParam = window.Telegram.WebApp.initDataUnsafe.start_param;
 
-      var returnData = {
+      var returnData = 
+      {
         "user": user,
         "referral_code": startParam? startParam : ''
       }
