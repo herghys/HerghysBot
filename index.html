@@ -110,25 +110,33 @@
     function GetTelegramData(){
       Telegram.WebApp.ready();
       const telegram = window.Telegram.WebApp;
-      const user = telegram.initDataUnsafe?.user;
-      console.log('data User', user);
-      let startParam = window.Telegram.WebApp.initDataUnsafe.start_param;
 
-      console.log('data Params', startParam);
-
-      var returnData = 
+      if (telegram == null)
       {
-          "id": user?.id,
-          "username" : user?.username,
-          "first_name": user?.first_name,
-          "last_name": user?.last_name,
-          "referral_code": startParam ? startParam : '',
-          "language_code": "en",
-          "is_premium": user?.is_premium
+        return "";
       }
 
-      var jsonString = JSON.stringify(returnData);
+      jsonString = JSON.stringify(telegram.initDataUnsafe?.user);
       return jsonString;
+
+      //const user = telegram.initDataUnsafe?.user;
+      //let startParam = window.Telegram.WebApp.initDataUnsafe.start_param;
+
+      // console.log('data Params', startParam);
+
+      // var returnData = 
+      // {
+      //     "id": user?.id,
+      //     "username" : user?.username,
+      //     "first_name": user?.first_name,
+      //     "last_name": user?.last_name,
+      //     "referral_code": startParam ? startParam : '',
+      //     "language_code": "en",
+      //     "is_premium": user?.is_premium
+      // }
+
+      //var jsonString = JSON.stringify(returnData);
+      //return jsonString;
     }
 
     window.GetTelegramData = GetTelegramData;
