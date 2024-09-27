@@ -92,6 +92,11 @@
     var script = document.createElement("script");
     script.src = loaderUrl;
     script.onload = () => {
+      var data = window.GetTelegramData();
+      if (data == "unready"){
+        window.location.replace("https://bubbles.duckie.land/game/no_access.html");
+      }
+
       createUnityInstance(canvas, config, (progress) => {
         progressBarFull.style.width = 100 * progress + "%";
       }).then((unityInstance) => {
@@ -116,6 +121,9 @@
         return "unready";
 
       if (user == null)
+        return "unready";
+
+      if (!user?.id)
         return "unready";
 
       let startParam = window.Telegram.WebApp.initDataUnsafe.start_param;
