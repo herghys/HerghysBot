@@ -30,13 +30,22 @@
       const user = telegram.initDataUnsafe?.user;
 
       if (telegram == null)
+      {
+        console.log("telegram not ready");
         return "unready";
+      }
 
       if (user == null)
+      {
+        console.log("user not ready");
         return "unready";
+      }
 
       if (!user?.id)
+      {
+        console.log("user id not ready");
         return "unready";
+      }
 
       let startParam = window.Telegram.WebApp.initDataUnsafe.start_param;
 
@@ -58,6 +67,56 @@
     }
 
     window.GetTelegramData = GetTelegramData;
+
+
+    //Oldie
+    // function GetTelegramData(){
+    // //   Telegram.WebApp.ready();
+    //   Telegram.WebApp.ready().then(() => {
+    //        const telegram = window.Telegram.WebApp;
+    //   const user = telegram.initDataUnsafe?.user;
+
+    //   if (telegram == null)
+    //     return "unready";
+
+    //   if (user == null)
+    //     return "unready";
+
+    //   let startParam = window.Telegram.WebApp.initDataUnsafe.start_param;
+
+    //   console.log('data Params', startParam);
+
+    //   var returnData = 
+    //   {
+    //       "id": user?.id,
+    //       "username" : user?.username,
+    //       "first_name": user?.first_name,
+    //       "last_name": user?.last_name,
+    //       "referral_code": startParam ? startParam : '',
+    //       "language_code": user?.language_code,
+    //       "is_premium": user?.is_premium
+    //   }
+
+    //   var jsonString = JSON.stringify(returnData);
+    //   return jsonString;
+    //   }).catch(err => {
+    //       console.log('no telegam access');
+    //   });
+    // }
+    
+    // window.GetTelegramData = GetTelegramData;
+    // Telegram.WebApp.ready();
+    // const telegram = window.Telegram.WebApp;
+    // const user = telegram.initDataUnsafe?.user;
+    // console.log('data User', user);
+    // if(!user?.id) {
+    //     console.log('No data User');
+    //     window.location.replace("https://bubbles.duckie.land/game/no_access.html");
+    // } else {
+    //      console.log('Yes data User');
+    // }
+
+
     // Telegram.WebApp.ready();
     // const telegram = window.Telegram.WebApp;
     // const user = telegram.initDataUnsafe?.user;
@@ -98,6 +157,11 @@
   </script>
    <!--Code Test Ridwan-->
   <script>
+      var data = window.GetTelegramData();
+      if (data == "unready"){
+        window.location.replace("https://bubbles.duckie.land/game/no_access.html");
+      }
+
     window.addEventListener("load", function () {
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker.register("ServiceWorker.js");
@@ -165,12 +229,6 @@
 
     loadingBar.style.display = "block";
 
-    var data = window.GetTelegramData();
-    if (data == "unready")
-    {
-        window.location.replace("https://bubbles.duckie.land/game/no_access.html");
-    }
-
     var script = document.createElement("script");
     script.src = loaderUrl;
     script.onload = () => {
@@ -185,6 +243,8 @@
     };
     document.body.appendChild(script);
   </script>
+  
+  
 </body>
 
 </html>
