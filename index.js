@@ -36,11 +36,11 @@ window.addEventListener("load", function () {
   }
 
   var buildUrl = "Build";
-  var loaderUrl = buildUrl + "/HerghysBotBuild.loader.js";
+  var loaderUrl = buildUrl + "/HerghysBot.loader.js";
   var config = {
-    dataUrl: buildUrl + "/HerghysBotBuild.data",
-    frameworkUrl: buildUrl + "/HerghysBotBuild.framework.js",
-    codeUrl: buildUrl + "/HerghysBotBuild.wasm",
+    dataUrl: buildUrl + "/HerghysBot.data",
+    frameworkUrl: buildUrl + "/HerghysBot.framework.js",
+    codeUrl: buildUrl + "/HerghysBot.wasm",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "Graphie",
     productName: "Duckie Bubble",
