@@ -23,6 +23,30 @@
     </div>
     <div id="unity-warning"> </div>
   </div>
+  <script>
+    function enforcePortraitMode() {
+        if (window.innerHeight < window.innerWidth) {
+            // Rotate the content to force portrait mode
+            document.body.style.transform = "rotate(-90deg)";
+            document.body.style.transformOrigin = "top left"; // Align rotation
+            document.body.style.width = window.innerHeight + "px"; // Adjust width
+            document.body.style.height = window.innerWidth + "px"; // Adjust height
+            document.body.style.position = "absolute"; // Positioning to prevent layout issues
+            document.body.style.top = "100%"; // Position to show content correctly
+            document.body.style.left = "0"; // Align to the left
+        } else {
+            // Reset the transformation if in portrait mode
+            document.body.style.transform = "rotate(0deg)";
+            document.body.style.width = "100vw";
+            document.body.style.height = "100vh";
+            document.body.style.position = "static"; // Reset positioning
+        }
+    }
+
+    // Add event listeners for load and resize
+    window.addEventListener("resize", enforcePortraitMode);
+    window.addEventListener("load", enforcePortraitMode);
+</script>
   <!--Code Test Ridwan-->
   <script>
     function GetTelegramData(){
